@@ -52,6 +52,11 @@ class Player {
     
     func didWin(against bot:Bot) {
         self._strength = self._strength + bot.strength
+        let newWeapon = Weapon(name: "Fusil à pompe", power: 2, accuracy: 0.75)
+        let userChoice = Utilisateur.choisirOptionMenu(message: "Le Bot vient de faire tomber une arme (\(newWeapon.description)), que souhaitez-vous faire ?\n1 - Ramasser cette arme\n2 - Continuer avec votre arme", max: 2)
+        if userChoice == 1 {
+            self.weapon = newWeapon
+        }
         rest()
     }
     

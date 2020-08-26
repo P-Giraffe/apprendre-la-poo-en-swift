@@ -18,4 +18,8 @@ class Weapon {
         self.power = power
         self.accuracy = accuracy
     }
+    
+    var description: String {
+        "\(name) - Puissance:\(power) - Précision:\(Int(accuracy*100))%"
+    }
 }
