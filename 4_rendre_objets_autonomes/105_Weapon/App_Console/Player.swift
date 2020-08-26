@@ -11,6 +11,7 @@ class Player {
     private let nickname:String
     private var _strength:Int = 2
     private var health:Int = 100
+    private var weapon:Weapon = Weapon(name: "Batte de Baseball")
     
     var strength: Int { _strength }
     var isAlive: Bool { health > 0 }

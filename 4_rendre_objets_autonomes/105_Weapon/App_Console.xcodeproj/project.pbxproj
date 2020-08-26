@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F82F661224C5FC9F0058189A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82F661124C5FC9F0058189A /* Player.swift */; };
 		F860308C1EB8C99F002BD3BF /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860308B1EB8C99F002BD3BF /* Math.swift */; };
+		F87E48E524F6C06B00399D6E /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E48E424F6C06B00399D6E /* Weapon.swift */; };
 		F8A5D25B1EB8B64000A56D56 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A5D25A1EB8B64000A56D56 /* main.swift */; };
 		F8A5D2621EB8B6C600A56D56 /* Utilisateur.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A5D2611EB8B6C600A56D56 /* Utilisateur.swift */; };
 		F8E22A7524C09D0D009CFF63 /* Bot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E22A7424C09D0D009CFF63 /* Bot.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		F82F661124C5FC9F0058189A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F860308B1EB8C99F002BD3BF /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		F87E48E424F6C06B00399D6E /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		F8A5D2571EB8B64000A56D56 /* App_Console */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = App_Console; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A5D25A1EB8B64000A56D56 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F8A5D2611EB8B6C600A56D56 /* Utilisateur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilisateur.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				F8A5D25A1EB8B64000A56D56 /* main.swift */,
 				F8E22A7424C09D0D009CFF63 /* Bot.swift */,
 				F82F661124C5FC9F0058189A /* Player.swift */,
+				F87E48E424F6C06B00399D6E /* Weapon.swift */,
 			);
 			path = App_Console;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				F860308C1EB8C99F002BD3BF /* Math.swift in Sources */,
 				F82F661224C5FC9F0058189A /* Player.swift in Sources */,
 				F8A5D2621EB8B6C600A56D56 /* Utilisateur.swift in Sources */,
+				F87E48E524F6C06B00399D6E /* Weapon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
