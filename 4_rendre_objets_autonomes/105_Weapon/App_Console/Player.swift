@@ -34,9 +34,13 @@ class Player {
         }
         if userChoice == 1 {
             let dicesValue = rollDices(username: self.nickname)
-            let hitStrength = dicesValue * _strength
-            bot.receiveHit(hitStrength: hitStrength)
-            print("\(self.nickname) assène un coup sur le bot avec une force de \(hitStrength)")
+            let hitStrength = dicesValue * (_strength + weapon.power)
+            if Double.random(in: 0.0...1.0) <= weapon.accuracy {
+                bot.receiveHit(hitStrength: hitStrength)
+                print("\(self.nickname) assène un coup sur le bot avec une force de \(hitStrength)")
+            } else {
+                print("\(self.nickname) a tiré sur le bot avec une force de \(hitStrength), mais a manqué sa cible")
+            }
         } else {
             rest()
         }
