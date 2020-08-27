@@ -12,6 +12,7 @@ class Player {
     private var _strength:Int = 2
     private var health:Int = 100
     private var weapon:Weapon = Weapon(name: "Batte de Baseball")
+    private let weaponListManager = WeaponListManager()
     
     var strength: Int { _strength }
     var isAlive: Bool { health > 0 }
@@ -52,10 +53,12 @@ class Player {
     
     func didWin(against bot:Bot) {
         self._strength = self._strength + bot.strength
-        let newWeapon = Weapon(name: "Fusil à pompe", power: 2, accuracy: 0.75)
-        let userChoice = Utilisateur.choisirOptionMenu(message: "Le Bot vient de faire tomber une arme (\(newWeapon.description)), que souhaitez-vous faire ?\n1 - Ramasser cette arme\n2 - Continuer avec votre arme", max: 2)
-        if userChoice == 1 {
-            self.weapon = newWeapon
+        
+        if let newWeapon = weaponListManager.getNextWeaponToLoot() {
+            let userChoice = Utilisateur.choisirOptionMenu(message: "Le Bot vient de faire tomber une arme (\(newWeapon.description)), que souhaitez-vous faire ?\n1 - Ramasser cette arme\n2 - Continuer avec votre arme", max: 2)
+            if userChoice == 1 {
+                self.weapon = newWeapon
+            }
         }
         rest()
     }
