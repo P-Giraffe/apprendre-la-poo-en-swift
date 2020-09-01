@@ -7,22 +7,18 @@
 //
 
 import Foundation
-class Player {
+class Player : Fighter {
     private let nickname:String
-    private var _strength:Int = 2
-    private var health:Int = 100
     private var weapon:Weapon = Weapon(name: "Batte de Baseball")
     private let weaponListManager = WeaponListManager()
     
-    var strength: Int { _strength }
-    var isAlive: Bool { health > 0 }
-    
     init(nickname:String) {
         self.nickname = nickname
+        super.init(strength: 2)
     }
     
-    func displayYourData() {
-        print("\(nickname) :\nSanté - \(health)% \nForce - \(_strength)")
+    override func displayYourData() {
+        print("\(nickname) :\nSanté - \(health)% \nForce - \(strength)")
     }
     
     func attack(bot:Bot) {
@@ -35,7 +31,7 @@ class Player {
         }
         if userChoice == 1 {
             let dicesValue = rollDices(username: self.nickname)
-            let hitStrength = dicesValue * (_strength + weapon.power)
+            let hitStrength = dicesValue * (strength + weapon.power)
             if Double.random(in: 0.0...1.0) <= weapon.accuracy {
                 bot.receiveHit(hitStrength: hitStrength)
                 print("\(self.nickname) assène un coup sur le bot avec une force de \(hitStrength)")
@@ -47,12 +43,8 @@ class Player {
         }
     }
     
-    func rest() {
-        raiseHealth(factor: 1.7)
-    }
-    
     func didWin(against bot:Bot) {
-        self._strength = self._strength + bot.strength
+        self.strength = self.strength + bot.strength
         
         if let newWeapon = weaponListManager.getNextWeaponToLoot() {
             let userChoice = Utilisateur.choisirOptionMenu(message: "Le Bot vient de faire tomber une arme (\(newWeapon.description)), que souhaitez-vous faire ?\n1 - Ramasser cette arme\n2 - Continuer avec votre arme", max: 2)
@@ -62,17 +54,4 @@ class Player {
         }
         rest()
     }
-    
-    func raiseHealth(factor:Double) {
-        guard factor > 1 else {
-            return
-        }
-        let newHealth = Int( Double(self.health) * factor )
-        self.health = min(newHealth, 100)
-    }
-    
-    func receiveHit(hitStrength:Int) {
-        health = health - min(hitStrength, health)
-    }
-    
 }

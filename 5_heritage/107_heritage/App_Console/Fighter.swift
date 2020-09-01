@@ -9,14 +9,18 @@
 import Foundation
 
 class Fighter {
-    private var health:Int = 100
-    private let _strength:Int
+    private var _health:Int = 100
+    private var _strength:Int
     
     init(strength:Int) {
         self._strength = strength
     }
     
-    var strength: Int { _strength }
+    var health: Int { _health }
+    var strength: Int {
+        get { _strength }
+        set { _strength = max(1, newValue) }
+    }
     var isAlive: Bool { health > 0 }
     
     func displayYourData() {
@@ -24,7 +28,7 @@ class Fighter {
     }
     
     func receiveHit(hitStrength:Int) {
-        health = health - min(hitStrength, health)
+        _health = _health - min(hitStrength, _health)
     }
     
     func rest() {
@@ -36,6 +40,6 @@ class Fighter {
             return
         }
         let newHealth = Int( Double(self.health) * factor )
-        self.health = min(newHealth, 100)
+        self._health = min(newHealth, 100)
     }
 }
