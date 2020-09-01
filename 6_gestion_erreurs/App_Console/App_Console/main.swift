@@ -24,7 +24,19 @@ func afficherHtmlOptionnel(urlSite:URL) {
     }
 }
 
-if let url = URL(string:"https://www.purplegiraffe.frr") {
-    afficherHtml(urlSite: url)
+struct EmptyPageError : Error {
+}
+
+func afficherHtmlException(urlSite:URL) throws {
+    let html:String
+    html = try String(contentsOf: urlSite)
+    if html.count == 0 {
+        throw EmptyPageError()
+    }
+    print(html)
+}
+
+if let url = URL(string:"https://www.purplegiraffe.fr") {
+    try? afficherHtmlException(urlSite: url)
 }
 
