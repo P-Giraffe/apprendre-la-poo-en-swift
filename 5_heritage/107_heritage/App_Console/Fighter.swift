@@ -24,7 +24,7 @@ class Fighter {
     var isAlive: Bool { health > 0 }
     
     func displayYourData() {
-        print("Bot :\nSanté - \(health)% \nForce - \(strength)")
+        print("Santé - \(health)% \nForce - \(strength)")
     }
     
     func receiveHit(hitStrength:Int) {

@@ -8,18 +8,10 @@
 
 import Foundation
 
-class Bot {
-    private let _strength:Int
-    private var health:Int = 100
-    
-    init(strength:Int) {
-        self._strength = strength
-    }
-    var strength: Int { _strength }
-    var isAlive: Bool { health > 0 }
-    
-    func displayYourData() {
-        print("Bot :\nSanté - \(health)% \nForce - \(strength)")
+class Bot : Fighter {
+    override func displayYourData() {
+        print("Bot")
+        super.displayYourData()
     }
     
     func attack(player:Player) {
@@ -27,9 +19,5 @@ class Bot {
         let hitStrength = dicesValue * strength
         player.receiveHit(hitStrength: hitStrength)
         print("Le Bot vous assène un coup avec une force de \(hitStrength)")
-    }
-    
-    func receiveHit(hitStrength:Int) {
-        health = health - min(hitStrength, health)
     }
 }

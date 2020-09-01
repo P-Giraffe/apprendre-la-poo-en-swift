@@ -18,7 +18,8 @@ class Player : Fighter {
     }
     
     override func displayYourData() {
-        print("\(nickname) :\nSanté - \(health)% \nForce - \(strength)")
+        print(nickname)
+        super.displayYourData()
     }
     
     func attack(bot:Bot) {
