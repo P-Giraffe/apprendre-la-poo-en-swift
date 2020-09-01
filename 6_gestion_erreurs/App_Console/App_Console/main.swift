@@ -36,7 +36,26 @@ func afficherHtmlException(urlSite:URL) throws {
     print(html)
 }
 
-if let url = URL(string:"https://www.purplegiraffe.fr") {
-    try? afficherHtmlException(urlSite: url)
+func obtenirHtml(urlSite:URL) -> Result<String,Error> {
+    let result:Result<String,Error>
+    do {
+        let html = try String(contentsOf: urlSite)
+        result = Result.success(html)
+    } catch {
+        print(error.localizedDescription)
+        result = Result.failure(error)
+    }
+    return result
 }
 
+if let url = URL(string:"https://www.purplegiraffe.frr") {
+    let purpleResult = obtenirHtml(urlSite: url)
+    switch purpleResult {
+    case .success(let purpleHtml):
+        print(purpleHtml)
+    case .failure(let error):
+        print("ERROR")
+        print(error.localizedDescription)
+    }
+    
+}
