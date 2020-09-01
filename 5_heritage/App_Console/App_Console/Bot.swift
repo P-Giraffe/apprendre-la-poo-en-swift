@@ -10,8 +10,9 @@ import Foundation
 class Bot : Combatant {
     var type:String
     
-    init(type:String) {
+    init(type:String, force:Int) {
         self.type = type
+        super.init(force: force)
     }
     
     func attaquer(joueur:Joueur) {

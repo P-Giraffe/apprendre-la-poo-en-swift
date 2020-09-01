@@ -9,7 +9,11 @@
 import Foundation
 
 class Combatant {
-    var force:Int = 1
+    init(force: Int) {
+        self.force = force
+    }
+    
+    var force:Int
     var sante:Int = 100
     
     func recevoirCoup(forceDuCoup:Int) {

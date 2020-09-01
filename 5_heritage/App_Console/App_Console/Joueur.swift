@@ -14,6 +14,12 @@ class Joueur : Combatant {
     
     init(pseudo:String) {
         self.pseudo = pseudo
+        super.init(force: 1)
+    }
+    
+    convenience init(pseudo:String, score:Int) {
+        self.init(pseudo:pseudo)
+        self.score = score
     }
     
     func attaquer(bot:Bot) {

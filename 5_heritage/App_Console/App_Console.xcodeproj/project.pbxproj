@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F806A0FC24FE755400CE8C2D /* Bot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806A0FB24FE755400CE8C2D /* Bot.swift */; };
 		F806A0FE24FE76A900CE8C2D /* Combatant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806A0FD24FE76A900CE8C2D /* Combatant.swift */; };
+		F806A0FF24FE80FE00CE8C2D /* Bot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806A0FB24FE755400CE8C2D /* Bot.swift */; };
 		F8476A6124CF126100888C72 /* Joueur.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8476A6024CF126100888C72 /* Joueur.swift */; };
 		F860308C1EB8C99F002BD3BF /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860308B1EB8C99F002BD3BF /* Math.swift */; };
 		F8A5D25B1EB8B64000A56D56 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A5D25A1EB8B64000A56D56 /* main.swift */; };
@@ -139,9 +139,9 @@
 				F8A5D25B1EB8B64000A56D56 /* main.swift in Sources */,
 				F8476A6124CF126100888C72 /* Joueur.swift in Sources */,
 				F860308C1EB8C99F002BD3BF /* Math.swift in Sources */,
+				F806A0FF24FE80FE00CE8C2D /* Bot.swift in Sources */,
 				F806A0FE24FE76A900CE8C2D /* Combatant.swift in Sources */,
 				F8A5D2621EB8B6C600A56D56 /* Utilisateur.swift in Sources */,
-				F806A0FC24FE755400CE8C2D /* Bot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
