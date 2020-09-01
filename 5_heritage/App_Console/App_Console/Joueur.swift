@@ -25,6 +25,11 @@ class Joueur : Combatant {
     func attaquer(bot:Bot) {
         print("Vous attaquez le Bot")
     }
+    
+    override func recevoirCoup(forceDuCoup: Int) {
+        super.recevoirCoup(forceDuCoup: forceDuCoup)
+        print("Aie!")
+    }
 }
 
 

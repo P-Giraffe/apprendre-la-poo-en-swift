@@ -10,4 +10,6 @@ import Foundation
 
 let j1 = Joueur(pseudo: "Ian")
 j1.force = 23
+j1.recevoirCoup(forceDuCoup: 10)
+print("Sante : \(j1.sante)")
 
