@@ -18,6 +18,12 @@ func afficherHtml(urlSite:URL) {
     }
 }
 
+func afficherHtmlOptionnel(urlSite:URL) {
+    if let html = try? String(contentsOf: urlSite) {
+        print(html)
+    }
+}
+
 if let url = URL(string:"https://www.purplegiraffe.frr") {
     afficherHtml(urlSite: url)
 }
