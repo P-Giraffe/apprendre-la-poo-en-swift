@@ -13,12 +13,12 @@ protocol MonProtocole {
 }
 
 
-class Joueur : Combatant, CustomStringConvertible, MonProtocole {
+class Joueur : Combatant, MonProtocole {
     func maFonctionObligatoire() {
         
     }
     
-    var description: String { return pseudo + " - \(score)" }
+    override var description: String { return pseudo + " - \(score)" }
     
     var pseudo:String
     var score:Int = 0

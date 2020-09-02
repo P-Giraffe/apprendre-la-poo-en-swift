@@ -8,8 +8,11 @@
 
 import Foundation
 
-let j1 = Joueur(pseudo: "Poppy")
-let j2 = Joueur(pseudo: "Ian")
-print(j1)
-print(j2)
-
+let combatants:[Combatant] = [
+    Bot(type: "Robot", force: 3),
+    Joueur(pseudo: "Ian"),
+    Joueur(pseudo: "Poppy")
+    ]
+for combatant in combatants {
+    print(combatant)
+}

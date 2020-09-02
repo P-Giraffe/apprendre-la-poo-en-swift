@@ -8,7 +8,9 @@
 
 import Foundation
 
-class Combatant {
+class Combatant:CustomStringConvertible {
+    var description: String { "force : \(force)" }
+    
     init(force: Int) {
         self.force = force
     }

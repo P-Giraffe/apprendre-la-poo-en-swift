@@ -8,6 +8,8 @@
 
 import Foundation
 class Bot : Combatant {
+    override var description: String { "\(type) force \(force)"}
+    
     var type:String
     
     init(type:String, force:Int) {
